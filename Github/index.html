@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+input{
+    width: 95%;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: antiquewhite;
+}
+</style>
+<body>
+    <div class="container">
+        <div id="search-bar">
+            <input type="text" id="search" placeholder="Search your username">
+            <button type="submit" onclick="displayAll()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div id="display-profile"></div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

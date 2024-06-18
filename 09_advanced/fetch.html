@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card">
+        <button>Display</button>
+        <div class="output"></div>
+    </div>
+</body>
+<script>
+    // const display=document.querySelector('button').addEventListener('click',async function output(){
+    //     fetch('https://api.github.com/users/Nilendri')
+    //     .then(function(res){
+    //         return res.json()
+    //     })
+    //     .then(function(data){
+    //         const output=document.querySelector('.output')
+    //         output.innerHTML=`
+    //             <div classs=output>
+    //                 <p>Name:${data.login}</p>
+    //             <img src="${data.avatar_url}" alt=""/>
+    //             <p>Followers:${data.followers}</p>
+    //             </div>
+    //             `; 
+    //     })
+    //     .catch(function(er){console.log(er);})
+    // })
+    const display=document.querySelector('button').addEventListener('click',async function output(){
+        try {
+            const res=await fetch('https://api.github.com/users/Nilendri')
+            const data=await res.json();
+            const output=document.querySelector('.output')
+            output.innerHTML=`
+            <div classs=output>
+                <p>Name:${data.login}</p>
+                <img src="${data.avatar_url}" alt=""/>
+                <p>Followers:${data.followers}</p>
+                </div>
+                `; 
+        } catch (error) {
+            display.innerHTML="Something went wrong"
+        }
+    })
+</script>
+</html>

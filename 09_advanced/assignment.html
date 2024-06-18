@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <button id="start">Display</button>
+      <div id="profile"></div>
+    </div>
+  </body>
+  <script>
+    const start = document.getElementById("start");
+    start.addEventListener("click", function () {
+      const url = "https://api.github.com/users/Nilendri";
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const response = JSON.parse(this.responseText);
+          const profile = document.getElementById("profile");
+          profile.innerHTML = `
+          <div class="profile">
+            <img src="${response.avatar_url}" alt=""/>
+            <p>Followers:${response.followers}</p>
+            </div>
+            `;
+        }
+      };
+      xhr.send()
+    });
+  </script>
+</html>

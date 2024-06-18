@@ -1,0 +1,22 @@
+body{
+    background-color: gray;
+}
+#height{
+margin-bottom: 37px;
+}
+button{
+    margin-top: 18px;
+    margin-left: 86px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+}
+.Weight-guide{
+    margin-top: 18px;
+    margin-left: 40px;
+}
+.result{
+     margin-top: 18px;
+    margin-left: 86px;
+}

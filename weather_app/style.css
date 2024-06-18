@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #18bd9e;
+}
+#weatherForm{
+    margin-left: 10px;
+}
+#input{
+    border: none;
+    background: transparent;
+     font-size: 1rem
+}
+#search{
+    border: none;
+    background: transparent;
+      cursor: pointer;
+  font-size: 1.2rem;
+}
+.input {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  background-color: #18bd9e;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.output {
+      position: fixed;
+  top: 159px;
+  margin-top: 1px; 
+  text-align: center;
+}

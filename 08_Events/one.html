@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="images">
+      <li>
+        <img
+          height="200px"
+          id="owl"
+          src="https://cdn.britannica.com/29/181429-050-A2AFC966/Burrowing-owl.jpg"
+          alt=""
+        />
+      </li>
+      <li>
+        <img
+          height="200px"
+          src="https://media.istockphoto.com/id/612629052/photo/snowy-owl.jpg?s=612x612&w=0&k=20&c=ZQal46RiiO_hLkx8swQvUDgEj0xzNhMI-S5rAT33gsQ="
+          alt=""
+        />
+      </li>
+      <li><a href="https://google.com" id="google">Google</a></li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById('owl').onclick=function(){
+        alert("Owl clicked")
+    }
+
+    // type,timestamp,defaultPrevented
+    // target,toElement,srcElement,currentTarget
+    // clientX,clientY,screenX,screenY
+    // altkey,shitftkey,ctrlkey,keycode
+
+    // Event propogation:- bubbleing(false)bottom-top,capturing(true)top-bottom
+
+    document.getElementById("images").addEventListener("click", function (e) {
+      console.log("clicked inside the ul");
+    },false);
+    document.getElementById("owl").addEventListener("click", function (e) {
+      console.log("clicked owl");
+      e.stopPropagation()
+    },false);
+    document.getElementById('google').addEventListener('click',function(e){
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("google clicked");
+    },false)
+    document.getElementById('images').addEventListener('click',function(e){
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        if (e.target.tagName='IMG') {
+            console.log(e.target.id);
+            let removeIt=e.target.parentNode
+            removeIt.remove()
+        }
+    },false)
+    // removeIt.parentNode.removeChild(removeIt)
+  </script>
+</html>
